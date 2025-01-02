@@ -765,7 +765,6 @@ xf_err_t xf_ymodem_send_get_buf_and_len(
     xf_ymodem_t *p_ym, uint8_t **pp_data_buf, uint32_t *p_buf_size)
 {
     xf_err_t xf_ret             = XF_OK;
-    uint32_t file_remain_len    = 0;
 
     XF_CHECK(NULL == p_ym, XF_ERR_INVALID_ARG,
              TAG, "p_ym:%s", xf_err_to_name(XF_ERR_INVALID_ARG));
@@ -784,9 +783,6 @@ xf_err_t xf_ymodem_send_get_buf_and_len(
 xf_err_t xf_ymodem_send_data(xf_ymodem_t *p_ym)
 {
     xf_err_t    xf_ret          = XF_OK;
-    uint8_t     header          = 0;
-    uint32_t    remaining_len   = 0;
-    uint32_t    data_len_max    = 0;
     uint8_t     ch              = 0;
     int32_t     retry_for_nak   = 0;
 
@@ -941,7 +937,6 @@ xf_err_t xf_ymodem_send_regular_packet_data(
     xf_err_t    xf_ret          = XF_OK;
     uint8_t     header          = 0;
     uint32_t    pad_len         = 0;
-    uint32_t    data_len_max    = 0;
 
     XF_CHECK(NULL == p_ym, XF_ERR_INVALID_ARG,
              TAG, "p_ym:%s", xf_err_to_name(XF_ERR_INVALID_ARG));
@@ -986,7 +981,6 @@ xf_err_t xf_ymodem_send_packet(xf_ymodem_t *p_ym)
 {
     xf_err_t    xf_ret          = XF_OK;
     int32_t     wlen            = 0;
-    int32_t     retry           = 0;
 
     XF_CHECK(NULL == p_ym, XF_ERR_INVALID_ARG,
              TAG, "p_ym:%s", xf_err_to_name(XF_ERR_INVALID_ARG));

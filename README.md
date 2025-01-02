@@ -123,8 +123,12 @@ I (19990)-sender: Computed MD5 hash: e41d09e17d5c8b4c746ddc5ed85525d1
 
 ## 参考资料
 
-[Ymodem 传输协议 - 树·哥 - 博客园](https://www.cnblogs.com/zzssdd2/p/15418778.html)
-[Ymodem 协议说明 - 一月一星辰 - 博客园](https://www.cnblogs.com/tangwc/p/18276156)
-[YModem: YModem 协议原版、中文译制版 与 C# 编写的 YModem 通用读写程序](https://gitee.com/miuser00/ymodemwin)
-[STM32 Ymodem 协议及代码解析-CSDN 博客](https://blog.csdn.net/u012993936/article/details/125102816)
-[纯 C 实现的 ymodem 库，无额外依赖-CSDN 博客](https://blog.csdn.net/qq_40824852/article/details/139661772)
+- [Ymodem 传输协议 - 树·哥 - 博客园](https://www.cnblogs.com/zzssdd2/p/15418778.html)
+
+- [Ymodem 协议说明 - 一月一星辰 - 博客园](https://www.cnblogs.com/tangwc/p/18276156)
+
+- [YModem: YModem 协议原版、中文译制版 与 C# 编写的 YModem 通用读写程序](https://gitee.com/miuser00/ymodemwin)
+
+- [STM32 Ymodem 协议及代码解析-CSDN 博客](https://blog.csdn.net/u012993936/article/details/125102816)
+
+- [纯 C 实现的 ymodem 库，无额外依赖-CSDN 博客](https://blog.csdn.net/qq_40824852/article/details/139661772)

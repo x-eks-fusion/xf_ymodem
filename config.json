@@ -1,0 +1,19 @@
+{
+    "name": "xf_ymodem",
+    "author": "catcatBlue",
+    "version": "1.0.0",
+    "license": "Apache-2.0",
+    "keywords": [
+        "xf_ymodem",
+        "ymodem",
+        "Ymodem",
+        "modem"
+    ],
+    "description": "xf_ymodem is a ymodem module based on the XFusion interface.",
+    "url": "",
+    "dependencies": {},
+    "links": {
+        "Homepage": "",
+        "Issues": ""
+    }
+}

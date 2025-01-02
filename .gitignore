@@ -1,0 +1,18 @@
+
+# 存放垃圾代码
+temp
+.backup
+
+# 临时文件夹
+build
+
+# xf 临时配置
+xfconfig
+xfconfig.old
+
+# vscode
+.vscode
+*.code-workspace
+
+# python 缓存
+__pycache__

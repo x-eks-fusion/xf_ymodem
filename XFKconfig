@@ -1,0 +1,10 @@
+
+config XF_YMODEM_XSHELL_ENABLE
+    bool "xshell support"
+    default "y"
+    help
+        If enabled, an extra 'O' is added after the receiving process ends.
+
+config XF_YMODEM_DEBUG_ENABLE
+    bool "debug"
+    default "n"

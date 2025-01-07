@@ -54,8 +54,7 @@ static const char *const TAG = "xf_ymodem";
 #endif
 
 #if !defined(xf_strnlen)
-#   include <string.h>
-#   define xf_strnlen(s, maxlen)    strnlen(s, maxlen)
+#   define xf_strnlen(s, maxlen)    xf_strlen(s)
 #endif
 
 #if !defined(xf_strncpy)
@@ -309,13 +308,13 @@ xf_err_t xf_ymodem_recv_check_packet_header(xf_ymodem_t *p_ym)
         p_ym->error_code    = XF_YMODEM_ERR_CAN;
         xf_ret              = XF_ERR_RESOURCE;
         goto l_xf_ret;
-    } break;
+    }
     default: {
         YM_LOGD(TAG, "recv(%02X) Not Supported", (int)ch);
         p_ym->data_len      = 0;
         xf_ret              = XF_FAIL;
         goto l_xf_ret;
-    } break;
+    }
     }
 
     if (XF_YMODEM_PROT_SEG_SIZE + p_ym->data_len > p_ym->buf_size) {
@@ -825,7 +824,7 @@ l_retry_for_nak:;
         p_ym->error_code    = XF_YMODEM_ERR_NAK_RETRY;
         xf_ret              = XF_ERR_RESOURCE;
         goto l_xf_ret;
-    } break;
+    }
     case XF_YMODEM_ACK: {
         p_ym->packet_num++;
         p_ym->file_len_transmitted += p_ym->data_len;
@@ -834,12 +833,12 @@ l_retry_for_nak:;
         p_ym->error_code    = XF_YMODEM_ERR_CAN;
         xf_ret              = XF_ERR_RESOURCE;
         goto l_xf_ret;
-    } break;
+    }
     default: {
         YM_LOGD(TAG, "recv(%02X) Not Supported", (int)ch);
         xf_ret              = XF_FAIL;
         goto l_xf_ret;
-    } break;
+    }
     }
 
     if (p_ym->file_len_transmitted >= p_ym->file_len) {
@@ -867,7 +866,7 @@ l_retry_for_eot:;
             }
             p_ym->state = XF_YMODEM_SEND_EOT2;
             goto l_retry_for_eot;
-        } break;
+        }
         case XF_YMODEM_ACK: {
             if (p_ym->state == XF_YMODEM_SEND_EOT2) {
                 p_ym->state = XF_YMODEM_SEND_NULL_FILE_INFO;
@@ -885,7 +884,7 @@ l_retry_for_eot:;
             p_ym->error_code    = XF_YMODEM_ERR_HEADER;
             xf_ret              = XF_FAIL;
             goto l_xf_ret;
-        } break;
+        }
         case XF_YMODEM_C: {
             if (p_ym->state != XF_YMODEM_SEND_NULL_FILE_INFO) {
                 YM_LOGD(TAG, "The peer has sent an error signal(%02X).", (int)ch);
@@ -918,12 +917,12 @@ l_retry_for_eot:;
 
             /* 等待之后一次应答 */
             goto l_retry_for_eot;
-        } break;
+        }
         default: {
             YM_LOGD(TAG, "recv(%02X) Not Supported", (int)ch);
             xf_ret              = XF_FAIL;
             goto l_xf_ret;
-        } break;
+        }
         } /* switch */
     }
 
